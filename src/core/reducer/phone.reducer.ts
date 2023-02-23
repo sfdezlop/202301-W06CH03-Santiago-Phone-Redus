@@ -6,5 +6,6 @@ const initialState: string = '';
 export const phoneReducer = createReducer(initialState, (builder) => {
   builder.addCase(ac.clickCreator, (state, { payload }) => state + payload);
   builder.addCase(ac.deleteCreator, (state) => '');
+  builder.addCase(ac.stopCreator, (state, { payload }) => state);
   builder.addDefaultCase((state) => state);
 });
