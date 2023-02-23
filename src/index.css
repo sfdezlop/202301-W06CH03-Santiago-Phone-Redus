@@ -59,3 +59,8 @@ li {
 .key:disabled {
   cursor: default;
 }
+
+.phone {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
