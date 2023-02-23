@@ -7,7 +7,7 @@ export function Keyboard() {
 
   const handleClick = (number: string) => {
     const state = store.getState();
-    console.log(state.phone);
+    console.log(store.getState().phone);
     if (state.phone.length < 9) {
       dispatch(ac.clickCreator(number));
     } else {
