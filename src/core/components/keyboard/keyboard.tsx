@@ -1,12 +1,18 @@
 import { useDispatch } from 'react-redux';
 import * as ac from '../../reducer/phone.actions.creator';
-import { AppDispatch } from '../../store/store';
+import { AppDispatch, store } from '../../store/store';
 
 export function Keyboard() {
   const dispatch = useDispatch<AppDispatch>();
 
   const handleClick = (number: string) => {
-    dispatch(ac.clickCreator(number));
+    const state = store.getState();
+    console.log(state.phone);
+    if (state.phone.length < 9) {
+      dispatch(ac.clickCreator(number));
+    } else {
+      dispatch(ac.stopCreator(number));
+    }
   };
 
   const handleDelete = () => {
