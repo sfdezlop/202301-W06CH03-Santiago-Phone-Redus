@@ -7,6 +7,8 @@ export const store = configureStore({
   },
 });
 
+//reducer: cada una de las patas o ramas del estado, podemos dar de alta tantas como queramos y asociar un reducer a cada uno
+
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;
 export type AppThunk<ReturnType = void> = ThunkAction<
